@@ -85,11 +85,11 @@ Prerequisites
 ---
 ```
 # 1. Clone the repository
-git clone https://github.com/yourusername/churnpredict-pro.git
-cd churnpredict-pro
+git clone https://github.com/Pragyan2004/ChurnPredict-Pro---AI-Powered-Customer-Churn-Prediction.git
+cd ChurnPredict-Pro---AI-Powered-Customer-Churn-Prediction
 
 # 2. Download Dataset (Kaggle: Telco Customer Churn)
-#    Place 'WA_Fn-UseC_-Telco-Customer-Churn.csv' in the project root
+    Place 'WA_Fn-UseC_-Telco-Customer-Churn.csv' in the project root
 
 # 3. Train the model
 jupyter notebook telco_churn.ipynb
