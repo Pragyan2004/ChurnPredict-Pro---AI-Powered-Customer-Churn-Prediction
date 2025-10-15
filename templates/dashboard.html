@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ChurnPredict Pro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">ChurnPredict Pro</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/predict">Predict</a></li>
+                <li><a href="/analysis">Analysis</a></li>
+                <li><a href="/insights">Insights</a></li>
+                <li><a href="/retention">Retention</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Analytics Dashboard</h1>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">26.5%</div>
+                <div class="stat-label">Overall Churn Rate</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1,248</div>
+                <div class="stat-label">High Risk Customers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">73.5%</div>
+                <div class="stat-label">Retention Success</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$2.4M</div>
+                <div class="stat-label">Potential Revenue Save</div>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="chart-container">
+                <canvas id="accuracyChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="featureChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="distributionChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ChurnPredict Pro</h3>
+                <p>Advanced AI-powered customer churn prediction and retention platform.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="/">Home</a>
+                <a href="/predict">Predict Churn</a>
+                <a href="/dashboard">Dashboard</a>
+                <a href="/insights">Insights</a>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <a href="/analysis">Analysis</a>
+                <a href="/retention">Retention Strategies</a>
+                <a href="/contact">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📧 info@churnpredict.com</p>
+                <p>📞 +1 (555) 123-4567</p>
+                <p>🏢 123 Business Ave, Suite 100</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ChurnPredict Pro. All rights reserved. | AI-Powered Customer Retention</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

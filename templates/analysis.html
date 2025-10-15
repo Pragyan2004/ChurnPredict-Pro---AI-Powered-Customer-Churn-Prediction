@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis - ChurnPredict Pro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">ChurnPredict Pro</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/predict">Predict</a></li>
+                <li><a href="/analysis">Analysis</a></li>
+                <li><a href="/insights">Insights</a></li>
+                <li><a href="/retention">Retention</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Advanced Analysis</h1>
+        
+        <div class="chart-container">
+            <h3>Churn Distribution by Service Type</h3>
+            <canvas id="serviceChart" height="100"></canvas>
+        </div>
+
+        <div class="grid">
+            <div class="chart-container">
+                <h3>Monthly Charges vs Tenure</h3>
+                <canvas id="scatterChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Churn Rate by Payment Method</h3>
+                <canvas id="paymentChart"></canvas>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Model Performance Summary</h3>
+            <div class="grid">
+                <div>
+                    <h4>Gradient Boosting Classifier</h4>
+                    <ul>
+                        <li><strong>ROC AUC:</strong> 0.86</li>
+                        <li><strong>Precision:</strong> 0.82</li>
+                        <li><strong>Recall:</strong> 0.78</li>
+                        <li><strong>F1-Score:</strong> 0.80</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Key Features</h4>
+                    <ol>
+                        <li>Contract Type (0.18)</li>
+                        <li>Tenure (0.15)</li>
+                        <li>Monthly Charges (0.12)</li>
+                        <li>Internet Service (0.10)</li>
+                        <li>Payment Method (0.08)</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ChurnPredict Pro</h3>
+                <p>Advanced AI-powered customer churn prediction and retention platform.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="/">Home</a>
+                <a href="/predict">Predict Churn</a>
+                <a href="/dashboard">Dashboard</a>
+                <a href="/insights">Insights</a>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <a href="/analysis">Analysis</a>
+                <a href="/retention">Retention Strategies</a>
+                <a href="/contact">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📧 info@churnpredict.com</p>
+                <p>📞 +1 (555) 123-4567</p>
+                <p>🏢 123 Business Ave, Suite 100</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ChurnPredict Pro. All rights reserved. | AI-Powered Customer Retention</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceCtx = document.getElementById('serviceChart').getContext('2d');
+            new Chart(serviceCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Fiber Optic', 'DSL', 'No Internet'],
+                    datasets: [{
+                        label: 'Churn Rate %',
+                        data: [42, 19, 8],
+                        backgroundColor: 'rgba(239, 68, 68, 0.8)'
+                    }]
+                }
+            });
+
+            const scatterCtx = document.getElementById('scatterChart').getContext('2d');
+            new Chart(scatterCtx, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: 'Churned',
+                        data: [{x: 25, y: 80}, {x: 12, y: 95}, {x: 5, y: 110}],
+                        backgroundColor: 'rgba(239, 68, 68, 0.8)'
+                    }, {
+                        label: 'Retained',
+                        data: [{x: 48, y: 65}, {x: 36, y: 45}, {x: 60, y: 30}],
+                        backgroundColor: 'rgba(16, 185, 129, 0.8)'
+                    }]
+                }
+            });
+
+            const paymentCtx = document.getElementById('paymentChart').getContext('2d');
+            new Chart(paymentCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Electronic Check', 'Mailed Check', 'Bank Transfer', 'Credit Card'],
+                    datasets: [{
+                        data: [45, 25, 15, 15],
+                        backgroundColor: [
+                            'rgba(239, 68, 68, 0.8)',
+                            'rgba(245, 158, 11, 0.8)',
+                            'rgba(59, 130, 246, 0.8)',
+                            'rgba(16, 185, 129, 0.8)'
+                        ]
+                    }]
+                }
+            });
+        });
+    </script>
+</body>
+</html>

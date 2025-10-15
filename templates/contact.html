@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - ChurnPredict Pro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">ChurnPredict Pro</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/predict">Predict</a></li>
+                <li><a href="/analysis">Analysis</a></li>
+                <li><a href="/insights">Insights</a></li>
+                <li><a href="/retention">Retention</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero" style="margin-top: 80px; padding: 4rem 2rem; border-radius: 24px;">
+            <div class="hero-content">
+                <h1>Get In Touch</h1>
+                <p>Ready to reduce churn and boost customer retention? Let's talk.</p>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h2 style="margin-bottom: 2rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Contact Form</h2>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-control" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Company</label>
+                        <input type="text" class="form-control" placeholder="Enter company name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-control" rows="5" placeholder="Tell us about your churn challenges..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        📨 Send Message
+                    </button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h2 style="margin-bottom: 2rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Contact Information</h2>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@churnpredict.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🏢</div>
+                        <div>
+                            <h4>Office</h4>
+                            <p>123 Business Ave, Suite 100<br>San Francisco, CA 94107</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Mon - Fri: 9:00 AM - 6:00 PM<br>Sat: 10:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem; padding: 2rem; background: rgba(99, 102, 241, 0.1); border-radius: 16px;">
+                    <h4 style="margin-bottom: 1rem; color: var(--primary);">🚀 Ready to Get Started?</h4>
+                    <p>Book a personalized demo to see how ChurnPredict Pro can transform your customer retention strategy.</p>
+                    <button class="btn" style="width: 100%; margin-top: 1rem;">
+                        📅 Schedule Demo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ChurnPredict Pro</h3>
+                <p>Advanced AI-powered customer churn prediction and retention platform.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="/">Home</a>
+                <a href="/predict">Predict Churn</a>
+                <a href="/dashboard">Dashboard</a>
+                <a href="/insights">Insights</a>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <a href="/analysis">Analysis</a>
+                <a href="/retention">Retention Strategies</a>
+                <a href="/contact">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📧 info@churnpredict.com</p>
+                <p>📞 +1 (555) 123-4567</p>
+                <p>🏢 123 Business Ave, Suite 100</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ChurnPredict Pro. All rights reserved. | AI-Powered Customer Retention</p>
+        </div>
+    </footer>
+</body>
+</html>

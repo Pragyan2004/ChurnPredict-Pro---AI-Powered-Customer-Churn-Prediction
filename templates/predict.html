@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict - ChurnPredict Pro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">ChurnPredict Pro</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/predict">Predict</a></li>
+                <li><a href="/analysis">Analysis</a></li>
+                <li><a href="/insights">Insights</a></li>
+                <li><a href="/retention">Retention</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero" style="margin-top: 80px; padding: 3rem 2rem; border-radius: 24px;">
+            <div class="hero-content">
+                <h1 style="font-size: 3rem;">AI Churn Prediction</h1>
+                <p>Advanced machine learning to predict customer churn with 86% accuracy</p>
+            </div>
+        </div>
+        
+        <div class="grid">
+            <div class="card">
+                <h2 style="margin-bottom: 2rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Customer Information</h2>
+                <form id="predictForm">
+                    <div class="form-group">
+                        <label class="form-label">Tenure (months)</label>
+                        <input type="number" class="form-control" name="tenure" min="0" max="100" value="12" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Monthly Charges ($)</label>
+                        <input type="number" step="0.01" class="form-control" name="monthly_charges" value="75.5" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Total Charges ($)</label>
+                        <input type="number" step="0.01" class="form-control" name="total_charges" value="905.0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Gender</label>
+                        <select class="form-control select-control" name="gender" required>
+                            <option value="Male" selected>Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Senior Citizen</label>
+                        <select class="form-control select-control" name="senior_citizen" required>
+                            <option value="No" selected>No</option>
+                            <option value="Yes">Yes</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Partner</label>
+                        <select class="form-control select-control" name="partner" required>
+                            <option value="No" selected>No</option>
+                            <option value="Yes">Yes</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Dependents</label>
+                        <select class="form-control select-control" name="dependents" required>
+                            <option value="No" selected>No</option>
+                            <option value="Yes">Yes</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Phone Service</label>
+                        <select class="form-control select-control" name="phone_service" required>
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Multiple Lines</label>
+                        <select class="form-control select-control" name="multiple_lines" required>
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
+                            <option value="No phone service">No phone service</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Internet Service</label>
+                        <select class="form-control select-control" name="internet_service" required>
+                            <option value="Fiber optic" selected>Fiber optic</option>
+                            <option value="DSL">DSL</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Online Security</label>
+                        <select class="form-control select-control" name="online_security" required>
+                            <option value="No" selected>No</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No internet service">No internet service</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Online Backup</label>
+                        <select class="form-control select-control" name="online_backup" required>
+                            <option value="No" selected>No</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No internet service">No internet service</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Device Protection</label>
+                        <select class="form-control select-control" name="device_protection" required>
+                            <option value="No" selected>No</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No internet service">No internet service</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Tech Support</label>
+                        <select class="form-control select-control" name="tech_support" required>
+                            <option value="No" selected>No</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No internet service">No internet service</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Streaming TV</label>
+                        <select class="form-control select-control" name="streaming_tv" required>
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
+                            <option value="No internet service">No internet service</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Streaming Movies</label>
+                        <select class="form-control select-control" name="streaming_movies" required>
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
+                            <option value="No internet service">No internet service</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Contract Type</label>
+                        <select class="form-control select-control" name="contract" required>
+                            <option value="Month-to-month" selected>Month-to-month</option>
+                            <option value="One year">One year</option>
+                            <option value="Two year">Two year</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Paperless Billing</label>
+                        <select class="form-control select-control" name="paperless_billing" required>
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Payment Method</label>
+                        <select class="form-control select-control" name="payment_method" required>
+                            <option value="Electronic check" selected>Electronic check</option>
+                            <option value="Mailed check">Mailed check</option>
+                            <option value="Bank transfer">Bank transfer</option>
+                            <option value="Credit card">Credit card</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        🚀 Predict Churn Risk
+                    </button>
+                </form>
+            </div>
+
+            <div class="card">
+                <div id="predictionResult" style="display: none;"></div>
+                <div id="defaultResult">
+                    <h3 style="margin-bottom: 1.5rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">How It Works</h3>
+                    <p>Our advanced AI model analyzes 20+ customer attributes to predict churn probability with 86% accuracy using ensemble learning techniques.</p>
+                    
+                    <div style="background: rgba(99, 102, 241, 0.1); padding: 2rem; border-radius: 16px; margin-top: 2rem; border-left: 4px solid var(--primary);">
+                        <h4 style="margin-bottom: 1rem; color: var(--primary);">🎯 Key Predictive Features:</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">✅ Contract duration & type</li>
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">✅ Monthly & total charges</li>
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">✅ Service usage patterns</li>
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">✅ Internet service type</li>
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">✅ Payment methods</li>
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">✅ Additional services</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: rgba(16, 185, 129, 0.1); padding: 2rem; border-radius: 16px; margin-top: 2rem; border-left: 4px solid var(--success);">
+                        <h4 style="margin-bottom: 1rem; color: var(--success);">📊 Model Performance:</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 0.5rem 0;">🎯 ROC AUC: 0.86</li>
+                            <li style="padding: 0.5rem 0;">🎯 Precision: 0.82</li>
+                            <li style="padding: 0.5rem 0;">🎯 Recall: 0.78</li>
+                            <li style="padding: 0.5rem 0;">🎯 F1-Score: 0.80</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ChurnPredict Pro</h3>
+                <p>Advanced AI-powered customer churn prediction and retention platform.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="/">Home</a>
+                <a href="/predict">Predict Churn</a>
+                <a href="/dashboard">Dashboard</a>
+                <a href="/insights">Insights</a>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <a href="/analysis">Analysis</a>
+                <a href="/retention">Retention Strategies</a>
+                <a href="/contact">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📧 info@churnpredict.com</p>
+                <p>📞 +1 (555) 123-4567</p>
+                <p>🏢 123 Business Ave, Suite 100</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ChurnPredict Pro. All rights reserved. | AI-Powered Customer Retention</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

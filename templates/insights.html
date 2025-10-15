@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights - ChurnPredict</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">ChurnPredict</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/predict">Predict</a></li>
+                <li><a href="/analysis">Analysis</a></li>
+                <li><a href="/insights">Insights</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Business Insights & Recommendations</h1>
+        
+        <div class="insight-grid">
+            <div class="insight-card">
+                <div class="insight-icon icon-danger">
+                    ⚡
+                </div>
+                <h3>High-Risk Segments</h3>
+                <p>Customers with month-to-month contracts and fiber optic internet show 42% higher churn rates. Focus retention efforts on this segment.</p>
+            </div>
+
+            <div class="insight-card">
+                <div class="insight-icon icon-primary">
+                    📊
+                </div>
+                <h3>Revenue Impact</h3>
+                <p>Preventing churn in high-value customers (>$70 monthly) could save an estimated $2.4M annually in recovered revenue.</p>
+            </div>
+
+            <div class="insight-card">
+                <div class="insight-icon icon-success">
+                    🔒
+                </div>
+                <h3>Retention Opportunities</h3>
+                <p>Customers with 2-year contracts have 89% lower churn probability. Consider promoting long-term contracts.</p>
+            </div>
+
+            <div class="insight-card">
+                <div class="insight-icon icon-primary">
+                    💳
+                </div>
+                <h3>Payment Optimization</h3>
+                <p>Electronic check users are 3x more likely to churn. Encourage automatic payment methods for better retention.</p>
+            </div>
+
+            <div class="insight-card">
+                <div class="insight-icon icon-danger">
+                    📱
+                </div>
+                <h3>Service Bundles</h3>
+                <p>Customers with multiple services (phone + internet + TV) show 60% lower churn rates. Promote bundle packages.</p>
+            </div>
+
+            <div class="insight-card">
+                <div class="insight-icon icon-success">
+                    🎯
+                </div>
+                <h3>Targeted Interventions</h3>
+                <p>Implement proactive outreach for customers with 3-6 months tenure, as this period shows highest sensitivity to churn.</p>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top: 2rem;">
+            <h3>Strategic Recommendations</h3>
+            <div class="grid">
+                <div>
+                    <h4>Immediate Actions (0-30 days)</h4>
+                    <ul>
+                        <li>Implement automated alerts for high-risk customers</li>
+                        <li>Launch targeted email campaigns for month-to-month contracts</li>
+                        <li>Train support team on churn indicators</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Medium-term (1-6 months)</h4>
+                    <ul>
+                        <li>Develop loyalty programs for long-term customers</li>
+                        <li>Optimize pricing strategies for fiber optic services</li>
+                        <li>Enhance customer onboarding process</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Long-term (6+ months)</h4>
+                    <ul>
+                        <li>Implement predictive analytics across all touchpoints</li>
+                        <li>Develop personalized retention offers</li>
+                        <li>Build customer lifetime value optimization system</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
